@@ -1,0 +1,7 @@
+index.pkl
+*.pkl
+.mock_llm_cache.json
+__pycache__/
+*.pyc
+.venv/
+INTERVIEWER_NOTES.md
