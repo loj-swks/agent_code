@@ -1,23 +1,7 @@
 #!/usr/bin/env python3
 """
-rag_pipeline.py
+main.py
 
-End-to-end RAG demo for the Helios internal knowledge base.
-
-Ingests markdown/text documents, builds a TF-IDF vector index, retrieves
-relevant chunks for a question, and asks Claude to answer using only the
-retrieved context.
-
-Requirements:
-    pip install -r requirements.txt
-
-Usage:
-    python rag_pipeline.py ingest --data-dir ./data
-    python rag_pipeline.py query "How do I rotate a Helios service token?"
-    python rag_pipeline.py serve --port 8080
-
-The generation step runs against the offline mock in mock_llm.py by default, so
-no API key is needed. Set HELIOS_LLM=anthropic to call the real API instead.
 """
 
 import argparse
