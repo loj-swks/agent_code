@@ -191,7 +191,7 @@ class TfidfEmbedder:
             for token in set(tokens):
                 doc_freq[token] = doc_freq.get(token, 0) + 1
 
-        self.vocabulary = {token: i for i, token in enumerate(set(all_tokens))}
+        self.vocabulary = {token: i for i, token in enumerate(sorted(set(all_tokens)))}
 
         n_docs = len(texts)
         self.idf = np.zeros(len(self.vocabulary), dtype=np.float32)
@@ -230,8 +230,8 @@ class VectorStore:
         hits = []
         for rank, idx in enumerate(ranked):
             hits.append({
-                "text": self.chunks[idx],
-                "score": float(scores[idx]),
+                "text": self.chunks[rank],
+                "score": float(scores[rank]),
                 "source": self.metadata[rank]["source"],
             })
         return hits
