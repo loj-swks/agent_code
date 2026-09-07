@@ -2,14 +2,6 @@
 
 No API key and no network access are required.
 
-```bash
-pip install -r requirements.txt
-
-python main.py ingest --data-dir ./data
-python main.py query "How do I rotate a Helios service token?"
-python main.py serve --port 8080
-```
-
 ### The model is mocked
 
 `mock_llm.py` is an offline stand-in for the Anthropic Messages API, and the
